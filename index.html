@@ -5,107 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Yhoselyn ❤️</title>
 <style>
-*{box-sizing:border-box;font-family:'Courier New',monospace}
-body{margin:0;background:#0f172a;color:#e2e8f0;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:16px}
-.card{background:#1e293b;border:1px solid #334155;border-radius:20px;padding:24px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5);text-align:center;position:relative;overflow:hidden}
-.green{color:#22c55e} .pink{color:#f472b6} .yellow{color:#facc15} .blue{color:#60a5fa}
-h1{font-size:24px;line-height:1.25}
-p{font-family:system-ui,sans-serif;color:#cbd5e1;line-height:1.5}
-.code{background:#0f172a;border-radius:12px;padding:14px;text-align:left;font-size:13px;line-height:1.7;margin:16px 0;overflow-x:auto}
-button{padding:14px 24px;border:0;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;font-family:system-ui}
+body{margin:0;background:#ffe4ec;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:16px;font-family:system-ui,sans-serif}
+.card{background:white;border-radius:24px;padding:28px;max-width:460px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+h1{color:#db2777;font-size:26px;line-height:1.3}
+p{color:#475569;font-size:17px;line-height:1.6}
+button{padding:14px 24px;border:0;border-radius:14px;font-size:18px;font-weight:800;cursor:pointer}
+.btn-rosa{background:#ec4899;color:white;width:100%}
+.btn-verde{background:#22c55e;color:white;width:100%}
 #si{background:#ec4899;color:white}
-#no{background:#334155;color:white;position:absolute;transition:.2s}
-.heart{font-size:60px;animation:latido 1s infinite}
-@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+#no{background:#e2e8f0;color:#334155;position:absolute;transition:.2s}
 .hidden{display:none}
+.corazon{font-size:64px;animation:latido 1s infinite}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
 </style>
 </head>
 <body>
 <div class="card">
-  <div id="paso1">
-    <div style="font-size:40px">💻❤️</div>
-    <h1><span class="green">> Hola Yhoselyn...</span><br> <span class="pink">Soy Junior, ejecutando...</span><br>declaracion.exe</h1>
-    <div class="code">
-      <span class="blue">const</span> yo = <span class="yellow">"Junior"</span>;<br>
-      <span class="blue">const</span> tu = <span class="yellow">"Yhoselyn"</span>;<br>
-      <span class="pink">if</span> (yo.piensaEn(tu) === <span class="yellow">"todo el día"</span>) {<br>
-      &nbsp;&nbsp;corazon.<span class="green">latir</span>(<span class="yellow">"fuerte"</span>);<br>
-      }
-    </div>
-    <p>Yhoselyn, antes de que pienses que es otro de mis inventos de ingeniero de sistemas... dale play, es en serio.</p>
-    <button style="background:#22c55e;color:white;width:100%" onclick="siguiente(1,2)">▶ Ejecutar programa</button>
-    <p style="font-size:12px">Hecho por Junior • Con mucho amor y 0 bugs (bueno, casi)</p>
+  <!-- PANTALLA 1 -->
+  <div id="p1">
+    <div style="font-size:50px">💌</div>
+    <h1>Hola Yhoselyn ❤️</h1>
+    <p>Junior te hizo esta página solo para ti.<br>No es un juego, es algo en serio.</p>
+    <p><b>¿Me dejas decirte algo importante?</b></p>
+    <button class="btn-rosa" onclick="ir(1,2)">Sí, dime 💖</button>
   </div>
 
-  <div id="paso2" class="hidden">
-    <div class="heart">❤️</div>
-    <h1>Yhoselyn, tengo un bug<br>que no puedo solucionar</h1>
-    <p>Desde que te conocí, mi sistema se cae cada vez que te veo. Mi corazón entra en <b>loop infinito</b> y mi código solo imprime tu nombre.</p>
-    <div class="code">
-      <span class="green">// ERROR 404: Paz mental not found</span><br>
-      <span class="green">// Cuando NO estás cerca...</span><br>
-      Junior.estado = <span class="yellow">"te extraño"</span>;<br>
-      Junior.quiero = <span class="yellow">"estar contigo"</span>;
-    </div>
-    <p>Ya intenté reiniciar, borrar caché, hasta reinstalarme... y nada. Solo hay una solución, Yhoselyn:</p>
-    <button style="background:#22c55e;color:white;width:100%" onclick="siguiente(2,3)">Ver la solución →</button>
+  <!-- PANTALLA 2 -->
+  <div id="p2" class="hidden">
+    <div class="corazon">❤️</div>
+    <h1>Yhoselyn, me gustas mucho</h1>
+    <p>Desde que te conocí no dejo de pensar en ti. Me pongo nervioso cuando te veo, me río con tus mensajes y mis días son mejores cuando hablas conmigo.</p>
+    <p>Intenté olvidarme de esto, pero no pude. Y ya no quiero esconderlo más.</p>
+    <button class="btn-verde" onclick="ir(2,3)">Sigue leyendo 👉</button>
   </div>
 
-  <div id="paso3" class="hidden" style="min-height:300px">
-    <h1>Yhoselyn, ¿quieres<br>ser mi novia? 🥺❤️</h1>
-    <p>Te prometo debuggear tus malos días, hacer backup de todas tus sonrisas y nunca dejarte en visto. Junior no te va a fallar.</p>
-    <div style="position:relative;height:130px;margin-top:20px">
-      <button id="si" onclick="acepto()">SÍ, OBVIO 😍</button>
+  <!-- PANTALLA 3 - PREGUNTA -->
+  <div id="p3" class="hidden" style="min-height:300px">
+    <h1>Yhoselyn, ¿quieres ser mi novia? 🥺❤️</h1>
+    <p>Te prometo cuidarte, escucharte, hacerte reír y estar ahí en los días buenos y en los malos.</p>
+    <p><b>¿Qué me dices?</b></p>
+    <div style="position:relative;height:130px;margin-top:10px">
+      <button id="si" onclick="ir(3,4)">SÍ, OBVIO 😍</button>
       <button id="no" onmouseover="escapar()" onclick="escapar()">No 😢</button>
     </div>
-    <p id="mensajeNo" style="font-size:13px;color:#facc15;font-family:system-ui"></p>
+    <p id="msg" style="color:#d97706;font-size:14px"></p>
   </div>
 
-  <div id="paso4" class="hidden">
-    <div style="font-size:30px">🎉💖🎉💖🎉</div>
-    <div class="heart">💍</div>
-    <h1>¡COMPILADO CON ÉXITO!</h1>
-    <div class="code">
-      <span class="green">> Build successful!</span><br>
-      <span class="green">> Relación iniciada: Yhoselyn + Junior = ❤️</span><br>
-      <span class="green">> Estado: Felices para siempre</span><br>
-      <span class="green">> Bugs: 0 | Amor: Infinito</span>
-    </div>
-    <p>Yhoselyn, gracias por decir que sí. Esta es la mejor decisión que has tomado, mejor que instalar Linux. Te quiero mucho.</p>
-    <p style="font-size:20px;font-weight:800;font-family:system-ui">¿Me das un abrazo para celebrar? 🫂</p>
-    <p style="font-size:13px">- Junior ❤️</p>
+  <!-- PANTALLA 4 - ACEPTÓ -->
+  <div id="p4" class="hidden">
+    <div style="font-size:35px">🎉💖🎉</div>
+    <div class="corazon">💍</div>
+    <h1>¡Yhoselyn dijo que SÍ!</h1>
+    <p>Gracias por decir que sí. De verdad me haces muy feliz.</p>
+    <p>Ahora somos novios, Yhoselyn + Junior ❤️</p>
+    <p style="font-size:20px;font-weight:800;color:#db2777">¿Me das un abrazo para celebrar? 🫂</p>
+    <p>- Junior ❤️</p>
   </div>
 </div>
 
 <script>
-let intentos = 0;
-function siguiente(a,b){
-  document.getElementById('paso'+a).classList.add('hidden');
-  document.getElementById('paso'+b).classList.remove('hidden');
+let i=0;
+function ir(a,b){
+  document.getElementById('p'+a).classList.add('hidden');
+  document.getElementById('p'+b).classList.remove('hidden');
   if(b===3){
     let no=document.getElementById('no');
     no.style.left='180px'; no.style.top='20px';
   }
 }
 function escapar(){
-  intentos++;
+  i++;
   let no=document.getElementById('no');
-  let mensajes=[
+  let textos=[
     "Oe Yhoselyn, ese botón no funciona 😅",
-    "Intenta de nuevo, no te va a dejar",
-    "Error: Opción 'No' no encontrada",
-    "Ya pues Yhoselyn, dale al SÍ",
-    "El sistema rechazó tu 'No' 🤖",
-    "Ya no intentes, el destino ya compiló"
+    "Intenta de nuevo, no te deja",
+    "Ya pues, dale al SÍ",
+    "Ese No está fallando, mejor dale al Sí 😜",
+    "Ya no intentes, mejor dime que sí ❤️"
   ];
-  document.getElementById('mensajeNo').innerText=mensajes[Math.min(intentos-1,mensajes.length-1)];
-  no.style.left=(Math.random()*220)+'px';
+  document.getElementById('msg').innerText=textos[Math.min(i-1,textos.length-1)];
+  no.style.left=(Math.random()*200)+'px';
   no.style.top=(Math.random()*80)+'px';
-}
-function acepto(){
-  document.getElementById('paso3').classList.add('hidden');
-  document.getElementById('paso4').classList.remove('hidden');
 }
 </script>
 </body>
-</html>
+</html
